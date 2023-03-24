@@ -1,16 +1,15 @@
 # Eorus dwm Build - dynamic window manager
 
-============================
-dwm is an extremely fast, small, and dynamic window manager for X.
-
 
 ## Patches I've Used
 
-dwm-alpha
-dwm-fullgaps
-dwm-statuscolors
+* dwm-alpha
+* dwm-fullgaps
+* dwm-statuscolors
 
 ## Xsetroot Scripts for Status
+
+Simple dwm statusbar shows brightness, volume, battery, date and time. Save it in an executable and start before <code>exec dwm</code> in xinitrc.
 
 <pre><code>
 #!/bin/sh
