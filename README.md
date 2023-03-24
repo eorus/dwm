@@ -4,11 +4,15 @@ For Thinkpad X220 I've tried to keep dwm as minimal as I can to use screen real 
 
 ## Patches I've Used
 
-* dwm-alpha
-* dwm-fullgaps
-* dwm-statuscolors
-* XF86Keys
+* [dwm-alpha](https://dwm.suckless.org/patches/alpha/)
+* [dwm-fibonacci](https://dwm.suckless.org/patches/fibonacci/)
+* [dwm-fullgaps](https://dwm.suckless.org/patches/fullgaps/)
+* [dwm-statuscolors](https://dwm.suckless.org/patches/statuscolors/)
+* XF86Keys <code>#include <X11/XF86keysym.h></code>
 
+## Font
+
+<code>static const char *fonts[]          = { "Source Code Pro:size=12:style=Bold:antialias=true:autohint=false" };</code>
 ### Main Keybindings
 
 MODKEY = Super

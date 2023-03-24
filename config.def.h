@@ -6,15 +6,15 @@
 #define BROWSER "brave"
 
 /* appearance */
-static const unsigned int borderpx  = 3;        /* border pixel of windows */
+static const unsigned int borderpx  = 5;        /* border pixel of windows */
 static const unsigned int gappx     = 5;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
-static unsigned int baralpha        = 0xd0;
-static unsigned int borderalpha     = OPAQUE;
+static const char *fonts[]          = { "Source Code Pro:size=12:style=Bold:antialias=true:autohint=false" };
+static const char dmenufont[]       = "Source Code Pro:size=12";
+static unsigned int baralpha        = 140;
+static unsigned int borderalpha     = 140;
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -52,11 +52,14 @@ static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 
+#include "fibonacci.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
+ 	{ "[@]",      spiral },
+ 	{ "[\\]",      dwindle },
 };
 
 /* key definitions */
@@ -93,6 +96,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_a,      setlayout,      {.v = &layouts[3]} },
+	{ MODKEY|ShiftMask,             XK_a,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
@@ -127,14 +132,14 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,			XK_m,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "ncmpcpp", NULL } } },
 	{ MODKEY|ShiftMask,		XK_c,		spawn,		SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle") },
 
-	{ MODKEY,			XK_F1,		spawn,		SHCMD("groff -mom /usr/local/share/dwm/larbs.mom -Tpdf | zathura -") },
+	{ MODKEY,			XK_F1,		spawn,		{.v = (const char*[]){ "zathura ~/Documents/markdown-cheatsheet-online.pdf", NULL } } },
 	{ MODKEY,			XK_F2,		spawn,		{.v = (const char*[]){ "dmenu_run", NULL } } },
 	{ MODKEY,			XK_F3,		spawn,		{.v = (const char*[]){ "displayselect", NULL } } },
 	{ MODKEY,			XK_F4,		spawn,		{.v = (const char*[]){ "pavucontrol", NULL } } },
 	{ MODKEY,			XK_F5,		spawn,		{.v = (const char*[]){ "dmenulaunch", NULL } } },
-	{ MODKEY,			XK_F6,		spawn,		{.v = (const char*[]){ "torwrap", NULL } } },
-	{ MODKEY,			XK_F7,		spawn,		{.v = (const char*[]){ "td-toggle", NULL } } },
-	{ MODKEY,			XK_F8,		spawn,		{.v = (const char*[]){ "mailsync", NULL } } },
+	{ MODKEY,			XK_F6,		spawn,		{.v = (const char*[]){ "maimpick", NULL } } },
+	{ MODKEY,			XK_F7,		spawn,		{.v = (const char*[]){ "newsup", NULL } } },
+	{ MODKEY,			XK_F8,		spawn,		{.v = (const char*[]){ "fetch-mail", NULL } } },
 	{ MODKEY,			XK_F9,		spawn,		{.v = (const char*[]){ "mounter", NULL } } },
 	{ MODKEY,			XK_F10,		spawn,		{.v = (const char*[]){ "unmounter", NULL } } },
 	{ MODKEY,			XK_F11,		spawn,		SHCMD("mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") },
