@@ -9,7 +9,6 @@ For Thinkpad X220 I've tried to keep dwm as minimal as I can to use screen real 
 * dwm-statuscolors
 * XF86Keys
 
-
 ### Main Keybindings
 
 MODKEY = Super
@@ -26,8 +25,6 @@ MODKEY = Super
 | MODKEY + SHIFT + 1-9     | send focused window to workspace (1-9)                        |
 | MODKEY + j               | focus stack +1 (switches focus between windows in the stack)  |
 | MODKEY + k               | focus stack -1 (switches focus between windows in the stack)  |
-| MODKEY + SHIFT + j       | rotate stack +1 (rotates the windows in the stack)            |
-| MODKEY + SHIFT + k       | rotate stack -1 (rotates the windows in the stack)            |
 | MODKEY + h               | expands size of window                                        |
 | MODKEY + l               | shrinks size of window                                        |
 | MODKEY + z               | gapps -1  decrease the gap size                               |
