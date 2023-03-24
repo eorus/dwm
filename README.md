@@ -47,7 +47,7 @@ MODKEY = Super
 | MODKEY + t              | layout 1                  |
 | MODKEY + f              | layout 2                  |
 | MODKEY + m              | layout 3                  |
-| MODKEY + g              | layout 4                  |
+| MODKEY + a              | layout 4                  |
 
 ### Application Controls
 
