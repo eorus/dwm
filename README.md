@@ -14,24 +14,24 @@ For Thinkpad X220 I've tried to keep dwm as minimal as I can to use screen real 
 
 MODKEY = Super
 
-| Keybinding                                                                               | Action                                                       |
-| -------------------------+-------------------------------------------------------------- | -------------------------+---------------------------------- |
-| MODKEY + SHIFT + RETURN                                                                  | opens terminal (open st)                                     |
-| MODKEY + p                                                                               | opens run launcher (dmenu but can be changed)                |
-| MODKEY + q                                                                               | quits window/program                                         |
-| MODKEY + BACKSPACE                                                                       | powermenu (opens sysact locak, logout, restart  dwm)         |
-| MODKEY + SHIFT + q                                                                       | quits dwm                                                    |
-| MODKEY + b                                                                               | hides the bar                                                |
-| MODKEY + 1-9                                                                             | switch focus to workspace (1-9)                              |
-| MODKEY + SHIFT + 1-9                                                                     | send focused window to workspace (1-9)                       |
-| MODKEY + j                                                                               | focus stack +1 (switches focus between windows in the stack) |
-| MODKEY + k                                                                               | focus stack -1 (switches focus between windows in the stack) |
-| MODKEY + SHIFT + j                                                                       | rotate stack +1 (rotates the windows in the stack)           |
-| MODKEY + SHIFT + k                                                                       | rotate stack -1 (rotates the windows in the stack)           |
-| MODKEY + h                                                                               | expands size of window                                       |
-| MODKEY + l                                                                               | shrinks size of window                                       |
-| MODKEY + z                                                                               | gapps -1  decrease the gap size                              |
-| MODKEY + x                                                                               | gapps +1  increase the gap size                              |
+| Keybinding               | Action                                                        |
+| ------------------------ | ------------------------------------------------------------- |
+| MODKEY + SHIFT + RETURN  | opens terminal (open st)                                      |
+| MODKEY + p               | opens run launcher (dmenu but can be changed)                 |
+| MODKEY + q               | quits window/program                                          |
+| MODKEY + BACKSPACE       | powermenu (opens sysact locak, logout, restart  dwm)          |
+| MODKEY + SHIFT + q       | quits dwm                                                     |
+| MODKEY + b               | hides the bar                                                 |
+| MODKEY + 1-9             | switch focus to workspace (1-9)                               |
+| MODKEY + SHIFT + 1-9     | send focused window to workspace (1-9)                        |
+| MODKEY + j               | focus stack +1 (switches focus between windows in the stack)  |
+| MODKEY + k               | focus stack -1 (switches focus between windows in the stack)  |
+| MODKEY + SHIFT + j       | rotate stack +1 (rotates the windows in the stack)            |
+| MODKEY + SHIFT + k       | rotate stack -1 (rotates the windows in the stack)            |
+| MODKEY + h               | expands size of window                                        |
+| MODKEY + l               | shrinks size of window                                        |
+| MODKEY + z               | gapps -1  decrease the gap size                               |
+| MODKEY + x               | gapps +1  increase the gap size                               |
 
 ### Layout Controls
 
@@ -71,7 +71,7 @@ Simple dwm statusbar shows brightness, volume, battery, date and time. Save it i
 <pre><code>
 #!/bin/sh
 
-# dwm statusbar - show current date and time
+# dwm statusbar
 status () {
 
 	echo -n "BAT: $(acpi -b | awk '{ split($5,a,":"); print substr($3,0,2), $4, "["a[1]":"a[2]"]" }' | tr -d ',') | $(date '+%Y-%m-%d %H:%M:%S')"
