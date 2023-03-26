@@ -19,7 +19,7 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+static const char col_cyan[]        = "#285577";
 static const char col_black[]       = "#000000";
 static const char col_red[]         = "#ff0000";
 static const char col_yellow[]      = "#ffff00";
@@ -81,16 +81,17 @@ static const char *termcmd[]  = { "st", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
+	{ MODKEY|ShiftMask,	            XK_d,		   spawn,		       {.v = (const char*[]){ "passmenu", NULL } } },
+	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
+	{ MODKEY|ShiftMask,	            XK_i,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_Return, zoom,           {0} },
+	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
@@ -131,6 +132,7 @@ static const Key keys[] = {
 	{ MODKEY,			XK_n,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "newsboat", NULL } } },
 	{ MODKEY|ShiftMask,			XK_m,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "ncmpcpp", NULL } } },
 	{ MODKEY|ShiftMask,		XK_c,		spawn,		SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle") },
+	{ MODKEY,			XK_p,			spawn,		{.v = (const char*[]){ "mpc", "toggle", NULL } } },
 
 	{ MODKEY,			XK_F1,		spawn,		{.v = (const char*[]){ "zathura ~/Documents/markdown-cheatsheet-online.pdf", NULL } } },
 	{ MODKEY,			XK_F2,		spawn,		{.v = (const char*[]){ "dmenu_run", NULL } } },

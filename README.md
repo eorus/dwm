@@ -19,8 +19,10 @@ MODKEY = Super
 
 | Keybinding               | Action                                                        |
 | ------------------------ | ------------------------------------------------------------- |
-| MODKEY + SHIFT + RETURN  | opens terminal (open st)                                      |
-| MODKEY + p               | opens run launcher (dmenu but can be changed)                 |
+| MODKEY + RETURN          | opens terminal (st)                                           |
+| MODKEY + d               | opens dmenu                                                   |
+| MODKEY + SHIFT + d       | opens passmenu                                                |
+| MODKEY + SHIFT + RETURN  | cycle master/stack                                            |
 | MODKEY + q               | quits window/program                                          |
 | MODKEY + BACKSPACE       | powermenu (opens sysact locak, logout, restart  dwm)          |
 | MODKEY + SHIFT + q       | quits dwm                                                     |
@@ -38,7 +40,7 @@ MODKEY = Super
 
 | Keybinding              | Action                    |
 | ----------------------- | ------------------------- |
-| MODKEY + d              | row layout                |
+| MODKEY + SHIFT + i      | row layout                |
 | MODKEY + i              | column layout             |
 | MODKEY + TAB            | cycle layout (-1)         |
 | MODKEY + SHIFT + TAB    | cycle layout (+1)         |
@@ -63,6 +65,8 @@ MODKEY = Super
 | MODKEY + v         | open vimwiki personal note taking wiki                                         |
 | MODKEY + SHIFT + m | open ncmpcpp music player                                                      |
 | MODKEY + c         | open calcurse personal calendar, organizer                                     |
+| MODKEY + SHIFT + c | volume mute to default sink                                                    |
+| MODKEY + p         | mpc toggle (mute for mpd)                                                      |
 
 
 ## Xsetroot Scripts for Status
