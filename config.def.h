@@ -13,8 +13,8 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Source Code Pro:size=12:style=Bold:antialias=true:autohint=false" };
 static const char dmenufont[]       = "Source Code Pro:size=12";
-static unsigned int baralpha        = 140;
-static unsigned int borderalpha     = 140;
+static const unsigned int baralpha  = 0xd0;
+static const unsigned int borderalpha = OPAQUE;
 
 static const char col_gray1[]       = "#210142"; //dark violet
 static const char col_gray2[]       = "#38096B"; //violet
