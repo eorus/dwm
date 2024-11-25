@@ -45,6 +45,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,         NULL,       0,            1,           -1 },
+ 	{ "Galculator",     NULL,         NULL,       0,            1,           -1 },
 	{ "Brave",    NULL,         NULL,       1 << 1,	      0,	      	 -1 }, // brave opening in second tag
 	{ "firefox",  NULL,         NULL,       1 << 3,       0,           -1 },
   { "LibreWolf",  NULL,       NULL,       1 << 3,       0,           -1 },
@@ -89,7 +90,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_d,      spawn,          {.v = roficmd } },
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          {.v = dmenucmd } },
   { MODKEY|ShiftMask,	            XK_p,		   spawn,		       {.v = (const char*[]){ "passmenu", NULL } } },
-	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -97,7 +98,7 @@ static const Key keys[] = {
 	{ MODKEY,         	            XK_udiaeresis,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
+	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
@@ -130,8 +131,9 @@ static const Key keys[] = {
 	{ MODKEY,			XK_w,		spawn,		{.v = (const char*[]){ BROWSER, NULL } } },
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "sudo", "nmtui", NULL } } },
 	{ MODKEY,			XK_e,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "neomutt", NULL } } },
+  { MODKEY|ShiftMask,		XK_e,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "htop", NULL } } },
 	{ MODKEY,			XK_r,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "ranger", NULL } } },
-	{ MODKEY|ShiftMask,		XK_r,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "htop", NULL } } },
+	{ MODKEY|ShiftMask,		XK_r,		spawn,		{.v = (const char*[]){ "thunar", NULL } } },
 	{ MODKEY,			XK_BackSpace,	spawn,		{.v = (const char*[]){ "sysact", NULL } } },
 	{ MODKEY,			XK_v,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "nvim", "-c", "VimwikiIndex", NULL } } },
 	{ MODKEY,			XK_c,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "calcurse", NULL } } },
@@ -141,7 +143,7 @@ static const Key keys[] = {
 	{ MODKEY,			XK_p,			spawn,		{.v = (const char*[]){ "mpc", "toggle", NULL } } },
 
 	{ MODKEY,			XK_F1,		spawn,		{.v = (const char*[]){ "zathura ~/Documents/markdown-cheatsheet-online.pdf", NULL } } },
-	{ MODKEY,			XK_F2,		spawn,		{.v = (const char*[]){ "dmenu_run", NULL } } },
+	{ MODKEY,			XK_F2,		spawn,		{.v = (const char*[]){ "galculator", NULL } } },
 	{ MODKEY,			XK_F3,		spawn,		{.v = (const char*[]){ "displayselect", NULL } } },
 	{ MODKEY,			XK_F4,		spawn,		{.v = (const char*[]){ "pavucontrol", NULL } } },
 	{ MODKEY,			XK_F5,		spawn,		{.v = (const char*[]){ "dmenulaunch", NULL } } },
