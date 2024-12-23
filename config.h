@@ -134,6 +134,7 @@ static const Key keys[] = {
   { MODKEY|ShiftMask,		XK_e,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "htop", NULL } } },
 	{ MODKEY,			XK_r,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "ranger", NULL } } },
 	{ MODKEY|ShiftMask,		XK_r,		spawn,		{.v = (const char*[]){ "thunar", NULL } } },
+	{ MODKEY,			XK_y,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "yazi", NULL } } },
 	{ MODKEY,			XK_BackSpace,	spawn,		{.v = (const char*[]){ "sysact", NULL } } },
 	{ MODKEY,			XK_v,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "nvim", "-c", "VimwikiIndex", NULL } } },
 	{ MODKEY,			XK_c,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "calcurse", NULL } } },
