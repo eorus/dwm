@@ -11,8 +11,12 @@ static const unsigned int gappx     = 5;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Source Code Pro:size=12:style=Bold:antialias=true:autohint=false" };
-static const char dmenufont[]       = "Source Code Pro:size=12";
+/* default font and colors for dwm */
+static const char *fonts[] = {
+    "Inter:size=12",
+    "JetBrains Mono:size=12"
+};
+static const char dmenufont[] = "Inter:size=12";
 static const unsigned int baralpha  = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
 
@@ -154,7 +158,7 @@ static const Key keys[] = {
 	{ MODKEY,			XK_F9,		spawn,		{.v = (const char*[]){ "mounter", NULL } } },
 	{ MODKEY,			XK_F10,		spawn,		{.v = (const char*[]){ "unmounter", NULL } } },
 	{ MODKEY,			XK_F11,		spawn,		SHCMD("mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") },
-	{ MODKEY,			XK_F12,		spawn,		SHCMD("remaps") },
+  { MODKEY,     XK_F12,   spawn,    SHCMD("~/.local/bin/toggle_tv.sh") },
 	{ MODKEY,			XK_space,	zoom,		{0} },
 	{ MODKEY|ShiftMask,		XK_space,	togglefloating,	{0} },
 
