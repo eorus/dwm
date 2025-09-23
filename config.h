@@ -141,7 +141,7 @@ static const Key keys[] = {
 	{ MODKEY,			XK_y,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "yazi", NULL } } },
 	{ MODKEY,			XK_BackSpace,	spawn,		{.v = (const char*[]){ "sysact", NULL } } },
 	{ MODKEY,			XK_v,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "nvim", "-c", "VimwikiIndex", NULL } } },
-	{ MODKEY,			XK_c,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "calcurse", NULL } } },
+  { MODKEY,     XK_c,   spawn,  SHCMD("dmenu-calc") },
 	{ MODKEY,			XK_n,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "newsboat", NULL } } },
 	{ MODKEY|ShiftMask,			XK_m,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "ncmpcpp", NULL } } },
 	{ MODKEY|ShiftMask,		XK_c,		spawn,		SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle") },
