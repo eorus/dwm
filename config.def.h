@@ -24,11 +24,11 @@ static const unsigned int baralpha  = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
 
 /* colors */
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+static const char col_gray1[]       = "#210142"; //dark violet
+static const char col_gray2[]       = "#38096B"; //violet
+static const char col_gray3[]       = "#FFFFFF";
+static const char col_gray4[]       = "#00E0D1"; //light blue
+static const char col_cyan[]        = "#38096B";
 static const char col_black[]       = "#000000";
 static const char col_red[]         = "#ff0000";
 static const char col_yellow[]      = "#ffff00";
